@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { LocationOn, Cake } from '../../styles/Icons';
+import Button from '../Button';
 
 export const Container = styled.div`
   display: flex;
@@ -37,7 +38,50 @@ export const Avatar = styled.div`
   bottom: max(-60px, -10vw);
   left: 15px;
 `;
-export const ProfileData = styled.div``;
+export const ProfileData = styled.div`
+  padding: min(calc(10vw + 7px), 67px) 16px 0px;
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+
+  > h1 {
+    font-weight: bold;
+    font-size: 19px;
+  }
+  > h2 {
+    font-weight: normal;
+    font-size: 15px;
+
+    color: var(--gray);
+  }
+
+  > p {
+    font-size: 15px;
+    margin-top: 11px;
+    > a {
+      text-decoration: none;
+      color: var(--twitter);
+    }
+  }
+
+  > ul {
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    > li {
+      font-size: 15px;
+      color: var(--gray);
+
+      > svg {
+        fill: var(--gray);
+        margin-right: 5px;
+      }
+    }
+  }
+`;
 
 const iconCSS = css`
   width: 20px;
@@ -53,4 +97,30 @@ export const CakeIcon = styled(Cake)`
   ${iconCSS}
 `;
 
-export const Followage = styled.div``;
+export const Followage = styled.div`
+  display: flex;
+
+  > span {
+    font-size: 15px;
+    color: var(--gray);
+
+    & + span {
+      margin-left: 29%;
+    }
+  }
+`;
+
+export const EditButton = styled(Button)`
+  position: absolute;
+  top: 2vw;
+  right: 7px;
+
+  padding: 4px 16px;
+  font-size: 16px;
+
+  @media (min-width: 320px) {
+    top: 10px;
+    padding: 10px 19px;
+    font-size: 15px;
+  }
+`;
